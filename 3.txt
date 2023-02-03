@@ -1,0 +1,67 @@
+CREATE SCHEMA IF NOT EXISTS `tarea2.3` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `tarea2.3` ;
+
+-- -----------------------------------------------------
+-- Table `tarea2.3`.`cliente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tarea2.3`.`cliente` (
+  `cod_cliente` INT NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  `apellido` VARCHAR(45) NOT NULL,
+  `telefono` INT NOT NULL,
+  `direccion` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`cod_cliente`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `tarea2.3`.`detalle_compra`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tarea2.3`.`detalle_compra` (
+  `id_detalle_compra` INT NOT NULL,
+  `fecha_compra` DATE NOT NULL,
+  `num_productos_comprados` INT NOT NULL,
+  PRIMARY KEY (`id_detalle_compra`))
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `tarea2.3`.`detalle_suministro`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tarea2.3`.`detalle_suministro` (
+  `id_detalle_suministro` INT NOT NULL,
+  PRIMARY KEY (`id_detalle_suministro`))
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `tarea2.3`.`prod_informatico`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tarea2.3`.`prod_informatico` (
+  `cod_producto` INT NOT NULL,
+  `descripcion` TEXT NOT NULL,
+  `precio` DOUBLE NOT NULL,
+  `num_productos` INT NOT NULL,
+  PRIMARY KEY (`cod_producto`))
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `tarea2.3`.`proveedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tarea2.3`.`proveedor` (
+  `cod_proveedor` INT NOT NULL,
+  `nombre_proveedor` VARCHAR(45) NOT NULL,
+  `apellido_proveedor` VARCHAR(45) NOT NULL,
+  `provincia` VARCHAR(45) NOT NULL,
+  `telefono` INT NOT NULL,
+  PRIMARY KEY (`cod_proveedor`))
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
